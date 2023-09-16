@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Stopwatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('https://wallpapers.com/images/featured/d0dyo66hnunbpkgb.jpg') no-repeat;
+            background-size: 100% 100%;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .stopwatchAPP {
+            margin: auto;
+            text-align: center;
+        }
+
+        .head {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .head h1 {
+            font-size: 70px;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            font-weight: bolder;
+        }
+
+        .head h3 {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .stopwatchMenu {
+            margin-top: 20px;
+        }
+
+        .digit,
+        .ket {
+            color: white;
+        }
+
+        .digit {
+            font-size: 50px;
+            font-weight: 700;
+        }
+
+        .ket {
+            font-size: 20px;
+        }
+
+        button {
+            font-weight: 600;
+            font-size: 20px;
+            padding: 5px 50px 5px 50px;
+            border: 0;
+            border-radius: 2px;
+            margin: 0 5px 0 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="stopwatchAPP">
+            <div class="head">
+                <h1>Aplikasi Stopwatch</h1>
+                <h3>~ AlulCode ~</h3>
+            </div>
+
+            <div id="stopWatch">
+                <span class="digit" id="hour">00</span>
+                <small class="ket">Jam</small>
+
+                <span class="digit" id="min">00</span>
+                <small class="ket">Min</small>
+
+                <span class="digit" id="sec">00</span>
+                <small class="ket">Det</small>
+
+                <span class="digit" id="milsec">00</span>
+                <small class="ket">Mils</small>
+            </div>
+
+            <div class="stopwatchMenu">
+                <button class="btn btn-primary px-5 mx-2" id="start">Start</button>
+                <button class="btn btn-primary px-5 mx-2" id="stop">Stop</button>
+                <button class="btn btn-primary px-5 mx-2" id="reset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="stopwatch.js"></script>
+</body>
+
+</html>

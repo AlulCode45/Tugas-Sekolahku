@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2.jpg.webp') no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="d-flex vw-100 vh-100">
+        <div class="m-auto">
+            <div class="text-center">
+                <h1 class="fw-bolder text-white" style="font-size: 50px;">Aplikasi Mathku ( Matematika Saku )</h1>
+                <p class="text-white font-bold" style="font-size: 30px;">Muhammad Khoyron Ahlaqul F ( 25/X-RPL3 )</p>
+                <button class="btn btn-primary mx-2 text-white" data-bs-toggle="modal" data-bs-target="#pangkat">
+                    Bilangan Pangkat
+                </button>
+                <button class="btn btn-primary mx-2 text-white" data-bs-toggle="modal" data-bs-target="#segitiga">
+                    Luas Segitiga
+                </button>
+                <button class="btn btn-primary mx-2 text-white" data-bs-toggle="modal" data-bs-target="#lingkaran">
+                    Luas Lingkaran
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="pangkat" tabindex="-1" aria-labelledby="pangkatLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="pangkatLabel">Bilangan Pangkat</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="">Bilangan</label>
+                            <input type="number" id="bilangan" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Pangkat</label>
+                            <input type="number" id="pangkatForm" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Hasil</label>
+                            <input type="number" class="form-control" id="hasil" readonly>
+                        </div>
+                    </form>
+
+                    <script>
+                        let bilangan = document.getElementById('bilangan')
+                        let pangkat = document.getElementById('pangkatForm')
+                        let hasil = document.getElementById('hasil')
+
+                        bilangan.addEventListener('keyup', function () {
+                            hasil.value = parseInt(this.value) ** parseInt(pangkat.value)
+                        })
+
+                        pangkat.addEventListener('keyup', function () {
+                            hasil.value = parseInt(bilangan.value) ** parseInt(this.value)
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="segitiga" tabindex="-1" aria-labelledby="segitigaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="segitigaLabel">Luas Segitigas</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+                        <div class="form-group">
+                            <label for="">Alas</label>
+                            <input type="number" id="alas" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tinggi</label>
+                            <input type="number" id="tinggi" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Hasil</label>
+                            <input type="number" class="form-control" id="hasilSegitiga" readonly>
+                        </div>
+                    </form>
+
+                    <script>
+                        let alas = document.getElementById('alas')
+                        let tinggi = document.getElementById('tinggi')
+                        let hasilSegitiga = document.getElementById('hasilSegitiga')
+
+                        alas.addEventListener('keyup', function () {
+                            hasilSegitiga.value = (parseFloat(alas.value) * parseFloat(tinggi.value)) / 2
+                        })
+
+                        tinggi.addEventListener('keyup', function () {
+                            hasilSegitiga.value = (parseFloat(alas.value) * parseFloat(tinggi.value)) / 2
+                        })
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="lingkaran" tabindex="-1" aria-labelledby="lingkaranLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="lingkaranLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="">Jari-Jari</label>
+                            <input type="number" id="jari" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Hasil</label>
+                            <input type="number" class="form-control" id="hasilLingkaran" readonly>
+                        </div>
+                    </form>
+
+                    <script>
+                        let jari = document.getElementById('jari')
+                        let hasilLingkaran = document.getElementById('hasilLingkaran')
+
+                        jari.addEventListener('keyup', function () {
+                            hasilLingkaran.value = (parseFloat(jari.value) ** 2 * 22) / 7
+                        })
+
+                        jari.addEventListener('keyup', function () {
+                            hasilLingkaran.value = (parseFloat(jari.value) ** 2 * 22) / 7
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
